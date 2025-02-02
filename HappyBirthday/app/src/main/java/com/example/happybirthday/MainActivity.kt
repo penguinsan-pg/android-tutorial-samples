@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
-        modifier = modifier,
+        modifier = modifier.padding(8.dp),
     ) {
         Text(
             text = message,
