@@ -34,6 +34,9 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
         fontSize = 100.sp,
         lineHeight = 116.sp,
     )
+    Text(
+        text = from
+    )
 }
 
 @Preview(showBackground = true)
