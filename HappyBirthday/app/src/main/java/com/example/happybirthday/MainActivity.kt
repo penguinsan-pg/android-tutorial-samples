@@ -27,7 +27,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             HappyBirthdayTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    GreetingText(message = "Happy Birthday Sam!", from = "From Emma")
+                    GreetingText(
+                        message = "Happy Birthday Sam!",
+                        from = "From Emma",
+                        modifier = Modifier.padding(8.dp)
+                    )
                 }
             }
         }
@@ -38,7 +42,7 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
-        modifier = modifier.padding(8.dp),
+        modifier = modifier
     ) {
         Text(
             text = message,
