@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -48,6 +49,52 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
+fun ComposeQuadrant(modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+    ) {
+        Row(
+            modifier = Modifier
+                .weight(weight = 1f)
+        ) {
+            Quadrant(
+                title = stringResource(R.string.text_composable_title),
+                description = stringResource(R.string.text_composable_description),
+                modifier = Modifier
+                    .background(color = Color(0xFFEADDFF))
+                    .weight(weight = 1f)
+            )
+            Quadrant(
+                title = stringResource(R.string.image_composable_title),
+                description = stringResource(R.string.image_composable_description),
+                modifier = Modifier
+                    .background(color = Color(0xFFD0BCFF))
+                    .weight(weight = 1f)
+            )
+        }
+        Row(
+            modifier = Modifier
+                .weight(weight = 1f)
+        ) {
+            Quadrant(
+                title = stringResource(R.string.row_composable_title),
+                description = stringResource(R.string.row_composable_description),
+                modifier = Modifier
+                    .background(color = Color(0xFFB69DF8))
+                    .weight(weight = 1f)
+            )
+            Quadrant(
+                title = stringResource(R.string.column_composable_title),
+                description = stringResource(R.string.column_composable_description),
+                modifier = Modifier
+                    .background(color = Color(0xFFF6EDFF))
+                    .weight(weight = 1f)
+            )
+        }
+    }
+}
+
+@Composable
 fun Quadrant(title: String, description: String, modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
@@ -73,13 +120,6 @@ fun Quadrant(title: String, description: String, modifier: Modifier = Modifier) 
 @Composable
 fun GreetingPreview() {
     ComposeQuadrantTheme {
-        Quadrant(
-            title = stringResource(R.string.text_composable_title),
-            description = stringResource(R.string.text_composable_description),
-            modifier = Modifier
-                .background(
-                    color = Color(0xFFEADDFF)
-                )
-        )
+        ComposeQuadrant()
     }
 }
