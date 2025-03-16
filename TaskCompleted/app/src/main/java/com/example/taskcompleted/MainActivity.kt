@@ -40,14 +40,6 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Composable
 fun TaskCompleted(modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center ,
