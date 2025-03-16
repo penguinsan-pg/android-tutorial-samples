@@ -38,14 +38,6 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Composable
 fun ComposeQuadrant(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
