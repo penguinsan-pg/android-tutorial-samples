@@ -29,9 +29,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             TaskCompletedTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    TaskCompleted(
+                        modifier = Modifier
+                            .fillMaxSize()
                     )
                 }
             }
