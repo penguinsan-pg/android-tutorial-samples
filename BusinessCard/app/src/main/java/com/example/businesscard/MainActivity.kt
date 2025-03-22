@@ -4,17 +4,21 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -49,6 +53,26 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
+fun BusinessCardContacts(modifier: Modifier = Modifier) {
+    Column(
+        horizontalAlignment = Alignment.Start,
+    ) {
+        Contact(
+            icon = Icons.Default.Phone,
+            text = stringResource(R.string.phone_number),
+        )
+        Contact(
+            icon = Icons.Default.Share,
+            text = stringResource(R.string.sns_account),
+        )
+        Contact(
+            icon = Icons.Default.Email,
+            text = stringResource(R.string.email),
+        )
+    }
+}
+
+@Composable
 fun Contact(
     icon: ImageVector,
     text: String,
@@ -74,6 +98,14 @@ fun Contact(
 fun GreetingPreview() {
     BusinessCardTheme {
         Greeting("Android")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BusinessCardContactsPreview() {
+    BusinessCardTheme {
+        BusinessCardContacts()
     }
 }
 
