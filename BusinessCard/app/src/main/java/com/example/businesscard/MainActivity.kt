@@ -66,7 +66,10 @@ fun BusinessCard(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .background(color = Color(0xFFD2E7D4))
     ) {
-        BusinessCardMainArea()
+        BusinessCardMainArea(
+            modifier = Modifier
+                .weight(1f)
+        )
         BusinessCardContacts()
     }
 }
@@ -75,16 +78,19 @@ fun BusinessCard(modifier: Modifier = Modifier) {
 fun BusinessCardMainArea(modifier: Modifier = Modifier) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
     ) {
         Image(
             painter = painterResource(R.drawable.android_logo),
             contentDescription = "android logo",
             modifier = Modifier
                 .background(color = Color(0xFF083041))
+                .size(width = 100.dp, height = 100.dp)
         )
         Text(
             text = stringResource(R.string.name),
-            fontSize = 36.sp,
+            fontSize = 48.sp,
         )
         Text(
             text = stringResource(R.string.job),
