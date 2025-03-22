@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -22,9 +24,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.businesscard.ui.theme.BusinessCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -50,6 +55,29 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
+}
+
+@Composable
+fun BusinessCardMainArea(modifier: Modifier = Modifier) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Image(
+            painter = painterResource(R.drawable.android_logo),
+            contentDescription = "android logo",
+            modifier = Modifier
+                .background(color = Color(0xFF083041))
+        )
+        Text(
+            text = stringResource(R.string.name),
+            fontSize = 36.sp,
+        )
+        Text(
+            text = stringResource(R.string.job),
+            fontWeight = FontWeight.Bold,
+            color = Color(0xFF016C3B),
+        )
+    }
 }
 
 @Composable
@@ -98,6 +126,14 @@ fun Contact(
 fun GreetingPreview() {
     BusinessCardTheme {
         Greeting("Android")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BusinessCardMainAreaPreview() {
+    BusinessCardTheme {
+        BusinessCardMainArea()
     }
 }
 
