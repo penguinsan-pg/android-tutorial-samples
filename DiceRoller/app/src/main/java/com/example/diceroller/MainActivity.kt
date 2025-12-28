@@ -49,7 +49,8 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
-            painter = painterResource(R.drawable.dice_1)
+            painter = painterResource(R.drawable.dice_1),
+            contentDescription = "1",
         )
         Button(onClick = { /* TODO */ }) {
             Text(stringResource(R.string.roll))
