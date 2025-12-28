@@ -37,3 +37,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = modifier
     )
 }
+
+@Composable
+fun DiceWithButtonAndImage() {
+    
+}
