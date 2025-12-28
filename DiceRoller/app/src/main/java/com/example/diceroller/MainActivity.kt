@@ -41,7 +41,8 @@ fun DiceRollerApp() {
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
     Column(
-        modifier = modifier
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
     }
 }
