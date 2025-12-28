@@ -30,6 +30,7 @@ class MainActivity : ComponentActivity() {
 fun DiceRollerApp() {
     DiceWithButtonAndImage(
         modifier = Modifier
+            .fillMaxSize()
     )
 }
 
