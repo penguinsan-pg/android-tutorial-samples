@@ -30,6 +30,12 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
+@Composable
+fun DiceRollerApp() {
+
+}
+
 @Composable
 fun DiceWithButtonAndImage() {
     
