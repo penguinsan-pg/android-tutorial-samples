@@ -60,7 +60,7 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
     ) {
         Button(
             onClick = {
-            // TODO: ボタンタップ時の処理
+                state = state.next()
             },
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFFC3ECD2),
