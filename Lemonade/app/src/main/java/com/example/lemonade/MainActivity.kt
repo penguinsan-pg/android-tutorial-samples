@@ -52,6 +52,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun LemonadeApp(modifier: Modifier = Modifier) {
     var state by remember { mutableStateOf(LemonState.TREE) }
+    var squeezeCount by remember { mutableStateOf(0) }
+    var requiredSqueezeCount by remember { mutableStateOf(2) }
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -60,7 +62,20 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
     ) {
         Button(
             onClick = {
-                state = state.next()
+                if (state == LemonState.SQUEEZE) {
+                    squeezeCount += 1
+                }
+
+                if (state == LemonState.SQUEEZE && squeezeCount < requiredSqueezeCount) {
+                    // もう一度タップする必要がある
+                } else {
+                    val newState = state.next()
+                    if (newState == LemonState.SQUEEZE) {
+                        squeezeCount = 0
+                        requiredSqueezeCount = (2..4).random()
+                    }
+                    state = newState
+                }
             },
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFFC3ECD2),
