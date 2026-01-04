@@ -19,6 +19,10 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -47,6 +51,8 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun LemonadeApp(modifier: Modifier = Modifier) {
+    var state by remember { mutableStateOf(LemonState.TREE) }
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -62,15 +68,15 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
             shape = RoundedCornerShape(percent = 15),
         ) {
             Image(
-                painter = painterResource(R.drawable.lemon_tree),
-                contentDescription = stringResource( R.string.lemon_tree_content_description),
+                painter = painterResource(state.painterId()),
+                contentDescription = stringResource(state.contentDescriptionId()),
             )
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = stringResource(R.string.lemon_tree_message),
+            text = stringResource(state.messageId()),
             fontSize = 18.sp,
         )
     }
