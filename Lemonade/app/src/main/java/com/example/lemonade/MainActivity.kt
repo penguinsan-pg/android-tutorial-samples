@@ -75,3 +75,35 @@ fun LemonadeApp(modifier: Modifier = Modifier) {
         )
     }
 }
+
+enum class LemonState {
+    TREE {
+        override fun painterId() = R.drawable.lemon_tree
+        override fun contentDescriptionId() = R.string.lemon_tree_content_description
+        override fun messageId() = R.string.lemon_tree_message
+        override fun next() = LemonState.SQUEEZE
+    },
+    SQUEEZE {
+        override fun painterId() = R.drawable.lemon_squeeze
+        override fun contentDescriptionId() = R.string.lemon_squeeze_content_description
+        override fun messageId() = R.string.lemon_squeeze_message
+        override fun next() = LemonState.DRINK
+    },
+    DRINK {
+        override fun painterId() = R.drawable.lemon_drink
+        override fun contentDescriptionId() = R.string.lemon_drink_content_description
+        override fun messageId() = R.string.lemon_drink_message
+        override fun next() = LemonState.RESTART
+    },
+    RESTART {
+        override fun painterId() = R.drawable.lemon_restart
+        override fun contentDescriptionId() = R.string.lemon_restart_content_description
+        override fun messageId() = R.string.lemon_restart_message
+        override fun next() = LemonState.TREE
+    };
+
+    abstract fun painterId(): Int
+    abstract fun contentDescriptionId(): Int
+    abstract fun messageId(): Int
+    abstract fun next(): LemonState
+}
