@@ -35,12 +35,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LemonadeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                LemonadeApp(
+                    modifier = Modifier
+                        .fillMaxSize()
+                )
             }
         }
     }
