@@ -89,7 +89,7 @@ fun EditNumberField(modifier: Modifier = Modifier) {
     var amountInput = mutableStateOf("0")
     TextField(
         value = amountInput.value,
-        onValueChange = {},
+        onValueChange = { amountInput.value = it },
         modifier = modifier
     )
 }
