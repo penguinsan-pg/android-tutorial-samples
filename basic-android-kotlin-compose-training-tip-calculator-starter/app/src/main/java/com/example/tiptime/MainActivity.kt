@@ -99,8 +99,8 @@ fun EditNumberField(
     val amount = amountInput.toDoubleOrNull() ?: 0.0
     val tip = calculateTip(amount)
     TextField(
-        value = amountInput,
-        onValueChange = { amountInput = it },
+        value = value,
+        onValueChange = onValueChange,
         label = { Text(stringResource(R.string.bill_amount)) },
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
