@@ -143,7 +143,11 @@ fun EditNumberField(
 }
 
 @Composable
-fun RoundTheTipRow(modifier: Modifier = Modifier) {
+fun RoundTheTipRow(
+    roundUp: Boolean,
+    onRoundUpChanged: (Boolean) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Row(
         modifier = modifier
             .fillMaxWidth()
