@@ -103,6 +103,10 @@ fun TipTimeLayout() {
         )
         EditNumberField(
             label = R.string.how_was_the_service,
+            keyboardOptions = KeyboardOptions.Default.copy(
+                keyboardType = KeyboardType.Number,
+                imeAction = ImeAction.Done,
+            ),
             value = tipInput,
             onValueChange = { tipInput = it },
             modifier = Modifier
