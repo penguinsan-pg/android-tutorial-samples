@@ -139,6 +139,10 @@ fun EditNumberField(
     )
 }
 
+@Composable
+fun RoundTheTipRow(modifier: Modifier = Modifier) {
+}
+
 /**
  * Calculates the tip based on the user input and format the tip amount
  * according to the local currency.
