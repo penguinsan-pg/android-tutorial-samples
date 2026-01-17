@@ -167,11 +167,13 @@ fun RoundTheTipRow(
 ) {
     Row(
         modifier = modifier
-            .fillMaxWidth()
-            .size(48.dp),
+            .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Text(text = stringResource(R.string.round_up_tip))
+        Text(
+            text = stringResource(R.string.round_up_tip),
+            modifier = modifier
+        )
         Switch(
             modifier = modifier
                 .fillMaxWidth()
