@@ -1,6 +1,7 @@
 package com.example.tiptime
 
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.onNodeWithText
 import com.example.tiptime.ui.theme.TipTimeTheme
 import org.junit.Rule
 import org.junit.Test
@@ -17,5 +18,6 @@ class TipUITests {
                 TipTimeLayout()
             }
         }
+        composeTestRule.onNodeWithText("Bill Amount")
     }
 }
