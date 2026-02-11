@@ -126,24 +126,6 @@ fun DogItem(
     }
 }
 
-@Composable
-private fun DogItemButton(
-    expanded: Boolean,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    IconButton(
-        onClick = onClick,
-        modifier = modifier,
-    ) {
-        Icon(
-            imageVector = Icons.Filled.ExpandMore,
-            contentDescription = stringResource(R.string.expand_button_content_description),
-            tint = MaterialTheme.colorScheme.secondary,
-        )
-    }
-}
-
 /**
  * Composable that displays a photo of a dog.
  *
@@ -192,6 +174,24 @@ fun DogInformation(
         Text(
             text = stringResource(R.string.years_old, dogAge),
             style = MaterialTheme.typography.bodyLarge,
+        )
+    }
+}
+
+@Composable
+private fun DogItemButton(
+    expanded: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    IconButton(
+        onClick = onClick,
+        modifier = modifier,
+    ) {
+        Icon(
+            imageVector = Icons.Filled.ExpandMore,
+            contentDescription = stringResource(R.string.expand_button_content_description),
+            tint = MaterialTheme.colorScheme.secondary,
         )
     }
 }
