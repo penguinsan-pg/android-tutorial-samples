@@ -110,6 +110,14 @@ fun DogItem(
     }
 }
 
+@Composable
+private fun DogItemButton(
+    expanded: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+}
+
 /**
  * Composable that displays a photo of a dog.
  *
