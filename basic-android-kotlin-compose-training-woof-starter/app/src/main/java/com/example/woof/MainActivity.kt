@@ -121,7 +121,7 @@ fun DogItem(
                 Spacer(modifier = Modifier.weight(1f))
                 DogItemButton(
                     expanded = expanded,
-                    onClick = { /* TODO */ },
+                    onClick = { expanded = !expanded },
                 )
             }
             DogHobby(
