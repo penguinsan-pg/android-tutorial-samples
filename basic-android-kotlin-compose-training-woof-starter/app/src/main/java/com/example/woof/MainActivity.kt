@@ -116,6 +116,10 @@ fun DogItem(
         ) {
             DogIcon(dog.imageResourceId)
             DogInformation(dog.name, dog.age)
+            DogItemButton(
+                expanded = expanded,
+                onClick = { /* TODO */ },
+            )
         }
     }
 }
