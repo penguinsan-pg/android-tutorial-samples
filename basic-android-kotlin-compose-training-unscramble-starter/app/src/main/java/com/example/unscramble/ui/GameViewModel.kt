@@ -35,4 +35,9 @@ class GameViewModel : ViewModel() {
         }
         return String(tempWord)
     }
+
+    fun resetGame() {
+        usedWords.clear()
+        _uiState.value = GameUiState(currentScrambledWord = pickRandomWordAndShuffle())
+    }
 }
