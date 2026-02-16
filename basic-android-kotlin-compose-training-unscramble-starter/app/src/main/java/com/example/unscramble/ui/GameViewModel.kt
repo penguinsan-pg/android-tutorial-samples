@@ -25,4 +25,14 @@ class GameViewModel : ViewModel() {
             return shuffleCurrentWord(currentWord)
         }
     }
+
+    private fun shuffleCurrentWord(word: String): String {
+        val tempWord = word.toCharArray()
+        // Scramble the word
+        tempWord.shuffle()
+        while (String(tempWord).equals(word)) {
+            tempWord.shuffle()
+        }
+        return String(tempWord)
+    }
 }
