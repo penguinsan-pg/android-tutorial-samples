@@ -13,6 +13,8 @@ class GameViewModel : ViewModel() {
 
     private lateinit var currentWord: String
 
+    private var usedWords: MutableSet<String> = mutableSetOf()
+
     private fun pickRandomWordAndShuffle(): String {
         // Continue picking up a new random word until you get one that hasn't been used before
         currentWord = allWords.random()
