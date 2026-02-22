@@ -7,10 +7,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 class GameViewModel : ViewModel() {
-    init {
-        resetGame()
-    }
-
     // Game UI state
     private val _uiState = MutableStateFlow(GameUiState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
@@ -18,6 +14,10 @@ class GameViewModel : ViewModel() {
     private lateinit var currentWord: String
 
     private var usedWords: MutableSet<String> = mutableSetOf()
+
+    init {
+        resetGame()
+    }
 
     private fun pickRandomWordAndShuffle(): String {
         // Continue picking up a new random word until you get one that hasn't been used before
