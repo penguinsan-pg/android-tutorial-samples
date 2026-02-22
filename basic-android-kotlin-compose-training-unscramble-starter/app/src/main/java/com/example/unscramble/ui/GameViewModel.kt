@@ -54,4 +54,12 @@ class GameViewModel : ViewModel() {
     fun updateUserGuess(guessedWord: String) {
         userGuess = guessedWord
     }
+
+    fun checkUserGuess() {
+        if (userGuess.equals(currentWord, ignoreCase = true)) {
+        } else {
+        }
+        // Reset user guess
+        updateUserGuess("")
+    }
 }
